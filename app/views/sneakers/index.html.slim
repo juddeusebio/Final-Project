@@ -6,7 +6,7 @@ body
   table#sneakers
     thead
       tr
-       th Colorway
+       th Nickname
        th Brand
        th Model
        th Size
@@ -16,8 +16,9 @@ body
        th Quantity
     - @sneakers.each do | kicks |
       tr
-        td = link_to kicks.colorway.to_s, sneakers_url(:id => kicks.id)
-        td = kicks.brand
+        td = link_to kicks.nickname , sneakers_url(:id => kicks.id)
+        / td = kicks.nickname
+        td = kicks.brand[:name]
         td = kicks.model
         td = kicks.size
         td = kicks.condition

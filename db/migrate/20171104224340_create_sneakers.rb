@@ -10,7 +10,7 @@ class CreateSneakers < ActiveRecord::Migration[5.1]
       t.string :model
       t.boolean :for_sale
       t.date :release_date
-      t.integer :brand_id
+      t.references :brand
 
       t.timestamps
     end

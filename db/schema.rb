@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116040905) do
+ActiveRecord::Schema.define(version: 20171128195106) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -44,6 +44,12 @@ ActiveRecord::Schema.define(version: 20171116040905) do
   end
 
   create_table "brands", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -87,7 +93,6 @@ ActiveRecord::Schema.define(version: 20171116040905) do
   end
 
   create_table "sneakers", force: :cascade do |t|
-    t.string "colorway"
     t.decimal "size"
     t.string "condition"
     t.integer "price"
@@ -100,6 +105,8 @@ ActiveRecord::Schema.define(version: 20171116040905) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
+    t.string "nickname"
+    t.index ["brand_id"], name: "index_sneakers_on_brand_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,6 +1,6 @@
 class SneakersController < ApplicationController
   def index
-  @sneakers = Sneaker.order("colorway").page(params[:page]).per(5)
+  @sneakers = Sneaker.order("nickname").page(params[:page]).per(5)
 
     end
 
