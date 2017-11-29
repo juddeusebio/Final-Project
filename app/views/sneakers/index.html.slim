@@ -16,7 +16,7 @@ body
        th Quantity
     - @sneakers.each do | kicks |
       tr
-        td = link_to kicks.nickname , sneakers_url(:id => kicks.id)
+        td = link_to kicks.nickname , sneaker_url(id: kicks.id)
         / td = kicks.nickname
         td = kicks.brand[:name]
         td = kicks.model
@@ -26,6 +26,14 @@ body
         td = kicks.price
         td = kicks.quantity
 
+
+
+h3 Categories
+h2 = link_to "Retro" , sneakers_path(category: 'Retro')
+h2 = link_to "Performance" , sneakers_path(category: 'Performance')
+h2 = link_to "Casual" , sneakers_path(category: 'Casual')
+h2 = link_to "Running" , sneakers_path(category: 'Running')
+h2 = link_to "Basketball" , sneakers_path(category: 'Basketball')
 p = link_to "About" , about_path
 p = link_to "Contact" , contact_path
 

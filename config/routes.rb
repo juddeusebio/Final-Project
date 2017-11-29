@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   get 'pages/contact' , as: :contact
 
-  get 'sneakers/index'
+  get 'sneakers/(:category)' , to: 'sneakers#index', as: 'sneakers'
 
-  get 'sneakers/:id' , to: 'sneakers#show', as:'sneakers'
+  get 'sneaker/:id' , to: 'sneakers#show', as:'sneaker'
 
   root 'sneakers#index',  as: :home
 

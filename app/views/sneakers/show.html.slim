@@ -6,7 +6,7 @@ h3
   =< @sneaker.nickname
 h3
   | Brand:
-  =< @sneaker.brand[:name]
+  =< @sneaker.brand.name
 h3
   | Model:
   =< @sneaker.model
@@ -22,6 +22,9 @@ h3
 h3
   | Price:
   =< @sneaker.price
+h3
+  | Category:
+  =< @sneaker.category.name
 h3
   | Image:
   = image_tag @sneaker.image.thumb
