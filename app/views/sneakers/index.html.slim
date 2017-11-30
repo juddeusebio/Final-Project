@@ -26,6 +26,10 @@ body
         td = kicks.price
         td = kicks.quantity
 
+    = form_tag(request.fullpath, method: :get, enforce_utf8: false) do
+      = text_field_tag :term, params[:term]
+      = submit_tag 'Search' , name: nil
+
 
 
 h3 Categories

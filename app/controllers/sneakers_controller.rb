@@ -6,10 +6,14 @@ class SneakersController < ApplicationController
       @sneakers = Sneaker.all
     end
     @sneakers = @sneakers.order("nickname").page(params[:page]).per(5)
+    @sneakers = Sneaker.search(params[:term])
   end
-
   def show
     @sneaker = Sneaker.find(params[:id])
+  end
+
+  def sneaker_params
+    params.require(:search).permit(:term)
   end
 
 end
