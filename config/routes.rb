@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root 'sneakers#index', as: :home
 
   resources :sneaker
+  resources :categories
   # devise_for :sneakers, ActiveAdmin::Devise.config
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
