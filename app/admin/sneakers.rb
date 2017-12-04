@@ -12,9 +12,8 @@ ActiveAdmin.register Sneaker do
 #   permitted
 # end
 
-permit_params :nickname, :size, :model, :brand_id, :condition, :quantity, :price,
-              :for_sale, :release_date, :image , :category_id
-
+permit_params :nickname, :size, :model, :brand_id, :condition, :quantity,
+              :price, :for_sale, :release_date, :image, :category_id
 
 form do |f|
   f.inputs do
