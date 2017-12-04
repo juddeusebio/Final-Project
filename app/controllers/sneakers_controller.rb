@@ -3,13 +3,13 @@ class SneakersController < ApplicationController
     if params[:category]
       @sneakers = Category.find_by(name: params[:category]).sneakers
     else
-      @sneakers = Sneaker.all
+      @sneakers = Sneaker.all.page(params[:page])
     end
-    @sneakers = @sneakers.order("nickname").page(params[:page]).per(5)
+    @sneakers = Sneaker.order("nickname").page(params[:page]).per(5)
     @sneakers = Sneaker.search(params[:term])
   end
   def show
-    @sneaker = Sneaker.find(params[:id])
+    @sneakers = Sneaker.find(params[:id])
   end
 
   def sneaker_params

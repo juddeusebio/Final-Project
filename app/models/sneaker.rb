@@ -11,4 +11,6 @@ class Sneaker < ApplicationRecord
       all
     end
   end
+
+  paginates_per 5
 end
